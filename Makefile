@@ -2,8 +2,8 @@ PROJECT_NAME := Space_Invaders.exe
 CXX := clang++
 CXX_FLAGS := -Wall
 LIB_FLAGS := -lSDL2main -lSDL2 -lSDL2_ttf
-LIB := -LC:/Users/muzol/Desktop/dev/cpp/Space_Invaders/dep/SDL2/lib/x64 -LC:/Users/muzol/Desktop/dev/cpp/Space_Invaders/dep/SDL2_ttf/lib/x64
-INCLUDE := -IC:/Users/muzol/Desktop/dev/cpp/Space_Invaders/dep/SDL2/include -IC:/Users/muzol/Desktop/dev/cpp/Space_Invaders/dep/SDL2_ttf/include
+LIB := -L./dep/SDL2/lib/x64 -L./dep/SDL2_ttf/lib/x64
+INCLUDE := -I./dep/SDL2/include -I./dep/SDL2_ttf/include
 SRC := ./src/main.cpp ./src/entity/entity.cpp ./src/widget/button.cpp ./src/widget/text.cpp ./src/widget/widget.cpp 
 OBJ := obj/main.o obj/entity.o obj/button.o obj/text.o obj/widget.o 
 
