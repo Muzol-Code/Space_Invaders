@@ -1,13 +1,16 @@
 #define SDL_MAIN_HANDLED
 #include <iostream>
 #include <Windows.h>
+#include <string>
 #include <vector>
 
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_image.h>
 
 #include "widget/button.hpp"
 #include "widget/text.hpp"
+#include "widget/image.hpp"
 #include "entity/entity.hpp"
 
 void init()
@@ -57,6 +60,11 @@ int main(int argc, char const *argv[])
         std::cout << "You clicked me!\n";
     });
 
+    Image img(360, 115);
+    std::string path = "res/textures/power_icon.png";  
+    img.load_image(path, render);
+    img.fit(bt.x, bt.y, bt.width, bt.height, 5);
+
     /*
     Text text("Test");
     text.set_font(render, font);
@@ -89,6 +97,8 @@ int main(int argc, char const *argv[])
 
         bt.update(event);
         bt.draw(render);
+
+        img.draw(render);
 
         /*
         for (auto &bt: bt_pack) {
